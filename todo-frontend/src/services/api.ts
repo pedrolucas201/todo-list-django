@@ -3,7 +3,7 @@ import { Task } from '../types/Task';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://web-production-4c23.up.railway.app/api',
+  baseURL: "http://web-production-4c23.up.railway.app/api/tasks/",
 });
 
 
