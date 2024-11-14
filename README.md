@@ -25,24 +25,22 @@ Este é um projeto de gerenciamento de tarefas construído com **Django** no bac
 
 ## Estrutura do Projeto
 
-```
-to-do-list
-├── todo_env/                 # Ambiente virtual para o Django
-├── todolist_project/         # Backend Django
-│   ├── manage.py
-│   └── todo_app/             # App principal da API
-│       ├── models.py         # Modelo Task
-│       ├── views.py          # Lógica da API
-│       ├── serializers.py    # Serializador do DRF
-│       └── urls.py           # Rotas do app
-└── todo-frontend/            # Frontend React com TypeScript
-    ├── src/
-    │   ├── App.tsx           # Componente principal
-    │   ├── components/       # Componentes de UI
-    │   ├── services/         # API requests (axios)
-    │   └── types/            # Definições de tipos TypeScript
-    └── vite.config.ts
-```
+- **to-do-list/**
+  - **todo_env/**: Ambiente virtual para o Django
+  - **todolist_project/**: Backend Django
+    - `manage.py`
+    - **todo_app/**: App principal da API
+      - `models.py`: Modelo Task
+      - `views.py`: Lógica da API
+      - `serializers.py`: Serializador do DRF
+      - `urls.py`: Rotas do app
+  - **todo-frontend/**: Frontend React com TypeScript
+    - **src/**
+      - `App.tsx`: Componente principal
+      - **components/**: Componentes de UI
+      - **services/**: Requisições de API (axios)
+      - **types/**: Definições de tipos TypeScript
+    - `vite.config.ts`
 
 ## Instalação e Configuração
 
