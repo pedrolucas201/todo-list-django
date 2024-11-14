@@ -28,7 +28,8 @@ DEBUG = False
 ALLOWED_HOSTS = ['.railway.app', 'localhost', '127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
-    'https://todo-list-django-two.vercel.app',  
+    'https://todo-list-django-two.vercel.app',
+    'https://web-production-4c23.up.railway.app',   
 ]
 
 # Application definition
