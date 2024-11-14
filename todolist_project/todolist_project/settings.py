@@ -27,6 +27,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['.railway.app', 'localhost', '127.0.0.1']
 
+CORS_ALLOWED_ORIGINS = [
+    'https://todo-list-django-two.vercel.app',  # Substitua pela URL correta do frontend no Vercel
+]
+
 # Application definition
 
 INSTALLED_APPS = [
