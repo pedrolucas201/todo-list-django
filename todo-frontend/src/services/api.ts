@@ -3,7 +3,7 @@ import { Task } from '../types/Task';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api', // Substitua pelo seu endpoint em produção
+  baseURL: 'https://web-production-4c23.up.railway.app/api',
 });
 
 export default api;
