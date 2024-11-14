@@ -5,7 +5,6 @@ const api = axios.create({
   baseURL: 'https://web-production-4c23.up.railway.app/api',
 });
 
-
 export default api;
 
 export const fetchTasks = () => api.get<Task[]>('/tasks/');
