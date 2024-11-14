@@ -2,74 +2,98 @@
 
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #1e1e2e;
-    color: #d1d1e9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  h1, h2, h3 {
-    color: #c084fc; /* Um roxo suave */
-  }
-  
-  button {
-    background-color: #6d28d9; /* Roxo mais escuro */
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 14px;
-  }
-  
-  button:hover {
-    background-color: #7c3aed;
-  }
-  
-  input, textarea {
-    background-color: #2e2e3e;
-    color: #ffffff;
-    border: 1px solid #4b5563;
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  /* Centralizar conteúdo */
-  .container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: #27293d;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  li {
-    background-color: #3b3c4e;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #1e1e2e;
+  color: #d1d1e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: #c084fc; /* Um roxo suave */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Botão */
+button {
+  background-color: #6d28d9; /* Roxo mais escuro */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #7c3aed;
+}
+
+/* Campos de Entrada */
+input, textarea {
+  background-color: #2e2e3e;
+  color: #ffffff;
+  border: 1px solid #4b5563;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: #27293d;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Lista de Tarefas */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #3b3c4e;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.task-info {
+  flex: 1;
+}
+
+/* Tarefa Concluída */
+.completed {
+  text-decoration: line-through;
+  color: #8b8da0;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}

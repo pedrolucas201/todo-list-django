@@ -3,35 +3,31 @@ import React, { useEffect, useState } from 'react';
 import { fetchTasks } from './services/api';
 import { Task } from './types/Task';
 import TaskList from './components/TaskList';
-import './global.css';
+import TaskForm from './components/TaskForm';
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  // Função para carregar as tarefas
   const loadTasks = async () => {
     try {
       const response = await fetchTasks();
-      setTasks(response.data); // Armazena as tarefas no estado
+      if (response && response.data) {
+        setTasks(response.data);
+      }
     } catch (error) {
       console.error("Erro ao buscar tarefas:", error);
     }
   };
 
-  // Carrega as tarefas quando o componente monta
   useEffect(() => {
     loadTasks();
   }, []);
 
-  // Atualiza as tarefas após a exclusão
-  const handleTaskDeleted = () => {
-    loadTasks();
-  };
-
   return (
-    <div className='container'>
+    <div>
       <h1>Minha Lista de Tarefas</h1>
-      <TaskList tasks={tasks} onTaskDeleted={handleTaskDeleted} />
+      <TaskForm onTaskAdded={loadTasks} />
+      <TaskList tasks={tasks} onTaskDeleted={loadTasks} onTaskUpdated={loadTasks} />
     </div>
   );
 };
