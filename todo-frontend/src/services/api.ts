@@ -1,11 +1,9 @@
-// src/services/api.ts
 import { Task } from '../types/Task';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "http://web-production-4c23.up.railway.app/api/tasks/",
+  baseURL: "https://web-production-4c23.up.railway.app/api",
 });
-
 
 export default api;
 
