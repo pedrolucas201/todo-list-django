@@ -1,0 +1,17 @@
+# Use uma imagem base com Python 3
+FROM python:3.10-slim
+
+# Define o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copie os arquivos do projeto para o contêiner
+COPY . /app
+
+# Instale as dependências do projeto
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Exponha a porta padrão para o Django
+EXPOSE 8000
+
+# Comando para iniciar o servidor Django
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
