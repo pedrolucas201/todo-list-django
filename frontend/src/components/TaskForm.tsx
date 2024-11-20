@@ -1,4 +1,3 @@
-// src/components/TaskForm.tsx
 import React, { useState } from 'react';
 import { createTask } from '../services/api';
 
@@ -12,27 +11,37 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskAdded }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await createTask({ title, description, completed: false, created_at: '', updated_at: '' });
-    setTitle('');
-    setDescription('');
-    onTaskAdded();
+    try {
+      await createTask({ 
+        title, 
+        description, 
+        completed: false, 
+        created_at: new Date().toISOString(), 
+        updated_at: new Date().toISOString() 
+      });
+      setTitle('');
+      setDescription('');
+      onTaskAdded();
+    } catch (error) {
+      console.error('Erro ao criar tarefa:', error);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Título"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        required
+        placeholder="Título"
       />
-      <textarea
-        placeholder="Descrição"
+      <input
+        type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        placeholder="Descrição"
       />
-      <button type="submit">Adicionar Tarefa</button>
+      <button type="submit">Adicionar</button>
     </form>
   );
 };

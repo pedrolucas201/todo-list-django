@@ -1,4 +1,3 @@
-// src/components/TaskList.tsx
 import React from 'react';
 import { Task } from '../types/Task';
 import { deleteTask, updateTask } from '../services/api';
@@ -11,46 +10,37 @@ interface TaskListProps {
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onTaskDeleted, onTaskUpdated }) => {
   const handleDelete = async (id: number) => {
-    await deleteTask(id);
-    onTaskDeleted();
+    try {
+      await deleteTask(id);
+      onTaskDeleted();
+    } catch (error) {
+      console.error('Erro ao deletar tarefa:', error);
+    }
   };
 
-  const handleToggleCompleted = async (task: Task) => {
+  const handleToggleComplete = async (task: Task) => {
     try {
-      // Enviar todos os dados da tarefa para o backend
-      const updatedTask = { 
-        ...task, 
-        completed: !task.completed // Atualize apenas o campo 'completed'
-      };
-      console.log("Dados para enviar ao backend:", updatedTask);
-
-      await updateTask(task.id, updatedTask);
+      await updateTask(task.id, { completed: !task.completed });
       onTaskUpdated();
     } catch (error) {
-      console.error("Erro ao atualizar tarefa:", error);
+      console.error('Erro ao atualizar tarefa:', error);
     }
   };
 
   return (
-    <div>
-      <h2>To-Do List</h2>
-      <ul>
-        {tasks.map(task => (
-          <li key={task.id}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => handleToggleCompleted(task)}
-            />
-            <div className={`task-info ${task.completed ? 'completed' : ''}`}>
-              <h3>{task.title}</h3>
-              <p>{task.description}</p>
-            </div>
-            <button onClick={() => handleDelete(task.id)}>Excluir</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {tasks.map((task) => (
+        <li key={task.id}>
+          <h3>{task.title}</h3>
+          <p>{task.description}</p>
+          <p>Status: {task.completed ? 'Concluído' : 'Pendente'}</p>
+          <button onClick={() => handleToggleComplete(task)}>
+            {task.completed ? 'Desmarcar' : 'Completar'}
+          </button>
+          <button onClick={() => handleDelete(task.id)}>Excluir</button>
+        </li>
+      ))}
+    </ul>
   );
 };
 
