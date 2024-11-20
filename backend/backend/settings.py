@@ -126,8 +126,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # URL do frontend em desenvolvimento
-    "https://seu-frontend-em-producao.com",  # URL do frontend em produção
+    "http://localhost:5173",  # Frontend em desenvolvimento
+    "https://todo-list-django-production.up.railway.app",  # Backend em produção
 ]
 
 CORS_ALLOW_HEADERS = [
