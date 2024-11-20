@@ -11,13 +11,14 @@ const App: React.FC = () => {
   const loadTasks = async () => {
     try {
       const response = await fetchTasks();
+      console.log('Tarefas carregadas:', response.data); // Verifique as tarefas carregadas
       if (response && response.data) {
         setTasks(response.data);
       }
     } catch (error) {
-      console.error("Erro ao buscar tarefas:", error);
+      console.error('Erro ao buscar tarefas:', error);
     }
-  };
+  };  
 
   useEffect(() => {
     loadTasks();

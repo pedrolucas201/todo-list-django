@@ -7,7 +7,16 @@ const api = axios.create({
 });
 
 export const fetchTasks = () => api.get<Task[]>('tasks/');
-export const createTask = (task: Omit<Task, 'id'>) => api.post('tasks/', task);
+export const createTask = async (task: Omit<Task, 'id'>) => {
+  try {
+    const response = await api.post<Task>('', task);
+    console.log('Resposta ao criar tarefa:', response.data); // Log da resposta
+    return response.data; // Certifique-se de que retorna os dados criados
+  } catch (error) {
+    console.error('Erro ao criar tarefa:', error);
+    throw error;
+  }
+};
 export const updateTask = (id: number, task: Partial<Task>) => {
   console.log("Dados enviados para updateTask:", task); // Log dos dados
   return api.put(`tasks/${id}/`, task);
