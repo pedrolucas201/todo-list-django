@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = ('o0ko@dd^&fl7qu*62cf!jcdriym+o$!xp$p8u_58^6&(#4^^*m', 'default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['todo-list-django-production.up.railway.app', '127.0.0.1', 'localhost']
 
