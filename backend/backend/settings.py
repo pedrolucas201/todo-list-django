@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['todo-list-django-production.up.railway.app', '127.0.0.1', 'loc
 # Application definition
 
 INSTALLED_APPS = [
-    'django.corsheaders',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
