@@ -1,6 +1,6 @@
+# Ignore o ambiente virtual e arquivos gerados
 venv/
 db.sqlite3
-node_modules/
-*.pyc
 __pycache__/
+node_modules/
 .vscode/
