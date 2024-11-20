@@ -1,5 +1,7 @@
 /* src/global.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 /* Reset básico */
 * {
   margin: 0;
@@ -15,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 20px;
 }
 
@@ -24,6 +26,7 @@ h1, h2, h3 {
   color: #c084fc; /* Um roxo suave */
   margin-bottom: 20px;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Botão */
