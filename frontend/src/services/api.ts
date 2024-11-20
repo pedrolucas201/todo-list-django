@@ -10,9 +10,9 @@ const api = axios.create({
 export const fetchTasks = () => api.get<Task[]>('tasks/');
 export const createTask = async (task: Omit<Task, 'id'>) => {
   try {
-    const response = await api.post<Task>('', task);
+    const response = await api.post<Task>('tasks/', task); // Corrigido para 'tasks/'
     console.log('Resposta ao criar tarefa:', response.data); // Log da resposta
-    return response.data; // Certifique-se de que retorna os dados criados
+    return response.data; // Retorna os dados criados
   } catch (error) {
     console.error('Erro ao criar tarefa:', error);
     throw error;
