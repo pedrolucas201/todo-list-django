@@ -1,9 +1,7 @@
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.renderers import JSONRenderer
+from rest_framework import viewsets
 from .models import Task
 from .serializers import TaskSerializer
 
-class TaskViewSet(ModelViewSet):
+class TaskViewSet(viewsets.ModelViewSet):  # ModelViewSet já suporta POST
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    renderer_classes = [JSONRenderer]  # Renderiza apenas JSON

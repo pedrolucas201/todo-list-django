@@ -1,12 +1,12 @@
+from rest_framework.routers import DefaultRouter
 from django.urls import path, include
+from todo_app.views import TaskViewSet
 from django.contrib import admin
-from rest_framework import routers
-from todo_app import views
 
-router = routers.DefaultRouter()
-router.register(r'tasks', views.TaskViewSet)
+router = DefaultRouter()
+router.register(r'tasks', TaskViewSet, basename='task')
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/', include(router.urls)),  # Inclui as rotas do router
     path('admin/', admin.site.urls),
 ]

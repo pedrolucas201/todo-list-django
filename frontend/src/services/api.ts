@@ -6,6 +6,7 @@ const api = axios.create({
   baseURL: 'https://todo-list-django-production.up.railway.app/api/', 
 });
 
+
 export const fetchTasks = () => api.get<Task[]>('tasks/');
 export const createTask = async (task: Omit<Task, 'id'>) => {
   try {
