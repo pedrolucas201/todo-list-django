@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['todo-list-django-production.up.railway.app', '127.0.0.1', 'loc
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'todo_app',
     'corsheaders',
     'django.contrib.admin',
@@ -118,7 +119,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# Diretório onde os arquivos estáticos do projeto estão armazenados
+STATICFILES_DIRS = [
+    BASE_DIR / "staticfiles",  # Diretório dos arquivos estáticos do projeto
+]
+
+# Diretório onde os arquivos estáticos serão coletados para produção
+STATIC_ROOT = BASE_DIR / "static"  # Não deve ser o mesmo que STATICFILES_DIRS
+
+# URL de acesso aos arquivos estáticos
+STATIC_URL = '/static/'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
