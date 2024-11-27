@@ -138,6 +138,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://todo-list-django-production.up.railway.app",  # Backend em produção
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOW_HEADERS = [
     "content-type",
     "authorization",
@@ -145,6 +148,13 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
     "accept",
     "origin",
+    "x-auth-token",
+    "x-client-key",
+    "x-client-token",
+    "x-client-secret",
+    "x-api-key",    
+    "x-client-id",
+    "x-client-secret",
 ]
 
 CORS_ALLOW_METHODS = [
