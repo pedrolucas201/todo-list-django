@@ -119,16 +119,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# Diretório onde os arquivos estáticos do projeto estão armazenados
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles",  # Diretório dos arquivos estáticos do projeto
+    BASE_DIR / "assets",
 ]
 
-# Diretório onde os arquivos estáticos serão coletados para produção
-STATIC_ROOT = BASE_DIR / "static"  # Não deve ser o mesmo que STATICFILES_DIRS
-
-# URL de acesso aos arquivos estáticos
-STATIC_URL = '/static/'
 
 
 
